@@ -1,6 +1,6 @@
 [package]
 name = "rocket-config-codegen"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["CugeDe <cugede.0x07ffff@gmail.com>"]
 description = "Procedural macros for the rocket-config library."
 repository = "https://github.com/CugeDe/rocket-config"
@@ -20,4 +20,4 @@ syn = "1.0"
 
 [dev-dependencies]
 rocket = "0.4"
-# rocket-config = { version = "0.0.1", path = "../core" }
+rocket-config = { path = "../core", version = "0.0" }
