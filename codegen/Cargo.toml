@@ -1,0 +1,23 @@
+[package]
+name = "rocket-config-codegen"
+version = "0.0.1"
+description = "Procedural macros for the rocket-config library."
+authors = ["CugeDe <cugede.0x07ffff@gmail.com>"]
+repository = "https://gitlab.com/CugeDe/rocket-config"
+readme = "../README.md"
+keywords = ["rocket", "rocket-config", "codegen", "code", "generation", "proc-macro", "config"]
+license = "MIT/Apache-2.0"
+edition = "2018"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+Inflector = "0.11.4"
+quote = "1.0"
+proc-macro2 = "1.0"
+syn = "1.0"
+
+[dev-dependencies]
+rocket = "0.4"
+rocket-config = { version = "0.0.1", path = "../core" }
