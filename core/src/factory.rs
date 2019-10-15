@@ -205,7 +205,7 @@ impl Fairing for Factory
     fn on_launch(&self, _rocket: &Rocket)
     {
         let _ = self.load();
-    } 
+    }
 }
 
 #[cfg(test)]

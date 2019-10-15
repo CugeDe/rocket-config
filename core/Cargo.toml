@@ -16,8 +16,8 @@ keywords = ["rocket", "rocket-config", "config"]
 
 [dependencies]
 rocket-config-codegen = { path = "../codegen", version = "0.0" }
-lazy_static = "1.4"
-rocket = "0.4.2"
+lazy_static = "1.0"
+rocket = "0.4"
 serde_json = "1.0"
 serde_yaml = "0.8"
 
