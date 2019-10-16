@@ -1,6 +1,6 @@
 [package]
 name = "rocket-config"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["CugeDe <cugede.0x07ffff@gmail.com>"]
 description = """
 Rust library providing a plugin loading and managing configuration files for

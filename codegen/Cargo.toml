@@ -1,6 +1,6 @@
 [package]
 name = "rocket-config-codegen"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["CugeDe <cugede.0x07ffff@gmail.com>"]
 description = "Procedural macros for the rocket-config library."
 repository = "https://github.com/CugeDe/rocket-config"
