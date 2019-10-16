@@ -84,8 +84,22 @@ impl Factory
                             .to_str().ok_or_else(|| error::Error::new(error::ErrorKind::Other, "invalid file name"))?
                             .to_owned(),
                         {
+                            eprintln!(
+                                "Configuration file awaiting for initialization: {:?}",
+                                path.file_name().unwrap_or(
+                                    std::ffi::OsStr::new("invalid file name")
+                                )
+                            );
+
                             let configuration = configuration::Configuration::new(&path);
                             configuration.load()?;
+
+                            eprintln!(
+                                "Configuration file initialized: {:?}",
+                                path.file_name().unwrap_or(
+                                    std::ffi::OsStr::new("invalid file name")
+                                )
+                            );
 
                             configuration
                         }
