@@ -172,7 +172,6 @@ impl Factory
         }
     }
 
-    // TODO: Gets configurations...
     pub fn get(&self, configuration_name: &str) -> result::Result<configuration::Configuration>
     {
         // First, try to get development configuration if compiled in development
@@ -213,11 +212,11 @@ impl Fairing for Factory
     fn on_attach(&self, rocket: Rocket)
         -> std::result::Result<Rocket, Rocket>
     {
-        // Stores himself in the state
-        let rocket = rocket.manage((*self).clone());
-
         // Loads available configurations
         let _ = self.load();
+
+        // Stores himself in the state
+        let rocket = rocket.manage((*self).clone());
 
         Ok(rocket)
     } 
