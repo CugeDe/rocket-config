@@ -192,20 +192,21 @@ impl Fairing for Factory
     {
         Info {
             name: "Configuration factory",
-            kind: Kind::Attach | Kind::Launch
+            kind: Kind::Attach
         }
     }
 
     fn on_attach(&self, rocket: Rocket)
         -> std::result::Result<Rocket, Rocket>
     {
-        Ok(rocket.manage((*self).clone()))
-    } 
+        // Stores himself in the state
+        let rocket = rocket.manage((*self).clone());
 
-    fn on_launch(&self, _rocket: &Rocket)
-    {
+        // Loads available configurations
         let _ = self.load();
-    }
+
+        Ok(rocket)
+    } 
 }
 
 #[cfg(test)]
