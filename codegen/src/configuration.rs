@@ -52,7 +52,7 @@ pub fn configuration_function(input: TokenStream) -> TokenStream {
 
     let generated_type = quote! {
         /// The request guard type.
-        #[derive(Debug)]
+        #[derive(Clone, Debug)]
         pub struct #configuration_type(#configuration);
     };
 
